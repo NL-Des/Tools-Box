@@ -31,7 +31,7 @@ git branch
 ## Changer de branche locale.
 git checkout <branche>
 
-## Créer et passer sur une autre branche.
+## Créer une branche à partir d'une branche existante, puis aller sur cette nouvelle branche.
 git checkout -b <nouvelle-branche>
 
 ## Fusionner la branche actuelle avec celle qui est nommée.
