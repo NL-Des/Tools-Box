@@ -28,6 +28,18 @@ docker ps
 ## Lister les container en cours d'exécutions ou non.
 docker ps -a
 
+## Lister les volumes.
+docker volume ls
+
+## Inspecter un volume.
+docker volume inspect <nom_du_volume>
+
+## Supprimer un volume.
+docker volume rm <nom_du_volume>
+
+## Voir les volumes utilisés par un container.
+docker inspect <nom_du_volume>
+
 ## Pour vérifier les réseaux existants.
 docker network ls
 
