@@ -1,78 +1,80 @@
-Taper Q pour quitter la commande en cours.
+# 📘 Tableau des commandes Git
 
-# Initialiser un dépôt git local.
-git init
+> Taper **Q** pour quitter certaines commandes (ex : `git log`).
 
-# Procédure d'envoi des push.
-git add <.> <nom_du_fichier>
-git commit -m "<Commentaire_du_code>"
-git push
+---
 
-# Récupération et clonage.
-## Cloner un dépôt distant sur ma machine.
-git clone <url>
+## 🏁 Initialisation
 
-## Récupérer les dernières modifications du dépôt distant sans les fusionner avec le local.
-git fetch
+| Action | Commande |
+|--------|----------|
+| Initialiser un dépôt local | `git init` |
 
-## Récupérer et fusionner les modifications du dépôt distant dans ma branche locale.
-git pull
+---
 
-# Gestion des branches
-## Création d'une branche locale dev, à partir d'une branche distante dev.
-git checkout -b dev origin/dev
+## 🚀 Procédure d’envoi (push)
 
-## Affichage des dépôts distants configurés.
-git remote -v
+| Action | Commande |
+|--------|----------|
+| Ajouter un fichier ou tout le dossier | `git add <.> <fichier>` |
+| Créer un commit | `git commit -m "<message>"` |
+| Envoyer vers le dépôt distant | `git push` |
 
-## Liste des branches locales.
-git branch
+---
 
-## Changer de branche locale.
-git checkout <branche>
+## 📥 Récupération & clonage
 
-## Créer une branche à partir d'une branche existante, puis aller sur cette nouvelle branche.
-git checkout -b <nouvelle-branche>
+| Action | Commande |
+|--------|----------|
+| Cloner un dépôt distant | `git clone <url>` |
+| Récupérer les modifications distantes sans fusion | `git fetch` |
+| Récupérer et fusionner les modifications distantes | `git pull` |
 
-## Fusionner la branche actuelle avec celle qui est nommée.
-git merge <branche>
+---
 
-# Suivi des fichiers.
-## Affiche les fichiers modifiés, supprimés ou ajoutés différents entre la branche et le local.
-git status
+## 🌿 Gestion des branches
 
-# Historique et inspection
-## Historique des commits
-git log
+| Action | Commande |
+|--------|----------|
+| Créer une branche locale depuis une branche distante | `git checkout -b dev origin/dev` |
+| Afficher les dépôts distants configurés | `git remote -v` |
+| Lister les branches locales | `git branch` |
+| Changer de branche | `git checkout <branche>` |
+| Créer une nouvelle branche et s’y déplacer | `git checkout -b <nouvelle-branche>` |
+| Fusionner la branche actuelle avec une autre | `git merge <branche>` |
 
-## Montre les différences entre l'index et les fichiers modifiés.
-git diff
+---
 
-## Montre les détails d'un commit.
-git show <commit>
+## 📂 Suivi des fichiers
 
-# Suppression et nettoyage.
-## Supprimer un fichier en local et dans le git.
-git rm <fichier>
+| Action | Commande |
+|--------|----------|
+| Voir les fichiers modifiés / ajoutés / supprimés | `git status` |
 
-## Mise en tampon de modifications non commités.
-git stash
+---
 
-## Retourner à l'état d'origine de la branche.
-git restore
+## 🕓 Historique & inspection
 
-# Arborescence de l'architecture
-## Tout afficher.
-tree
+| Action | Commande |
+|--------|----------|
+| Afficher l’historique des commits | `git log` |
+| Voir les différences entre index et fichiers modifiés | `git diff` |
+| Voir les détails d’un commit | `git show <commit>` |
 
-## Arbre avec une limite de profondeur.
-tree -L2
+---
 
-## Arbre avec les fichiers cachés.
-tree -a
+## 🧹 Suppression & nettoyage
 
-# Copier un dépôt avec son historique vers un autre dépôt
-git clone --mirror https://zone01normandie.org/git/nleonard/forum forum-mirror
-cd forum-mirror
-git remote add github https://github.com/NL-Des/Forum.git
-git push --mirror github
+| Action | Commande |
+|--------|----------|
+| Supprimer un fichier local + Git | `git rm <fichier>` |
+| Mettre de côté des modifications non commités | `git stash` |
+| Restaurer l’état d’origine d’un fichier ou branche | `git restore` |
+
+---
+
+## 🌳 Arborescence du projet (commande `tree`)
+
+| Action | Commande |
+|--------|----------|
+| Afficher toute l’arborescence | `tree` |
