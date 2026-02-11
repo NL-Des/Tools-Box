@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device_width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+</head>
+
+<body>
+    <h1>WebSocket Client</h1>
+    <div>
+        <!-- Zone d'écriture de l'utilisateur -->
+        <input type="text" id="messageInput" placeholder="Enter your message"> 
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <!-- C'est ici que le script va injecter sur l'écran de l'utilisateur les messages reçus par le serveur -->
+    <div id="messages"></div>
+
+    <script>
+        let ws;
+        
+        // La fonction est appelée dès le chargement de la page.
+        // La connection est donc automatique.
+        function connect() {
+            // C'est ici que le client demande demande l'upgrade de la communication HTTP en WS (WebSocket)
+            ws = new WebSocket("ws://localhost:8080/ws");
+
+            // Si le Handshake avec le serveur GO est bon, alors on est connecté.
+            ws.onopen = function() {
+                console.log("Connected to Websocket server \n");
+            };
+
+            // A chaque fois que le serveur GO fais "conn.WriteMessage", cette fonction se déclanche.
+            ws.onmessage = function(event) {
+                let messageDisplay = document.getElementById("messages");
+                messageDisplay.innerHTML += `<p>${event.data}</p>`; // "event.data" contient le message renvoyé par le serveur.
+            };
+
+            // Si le serveur redémarre ou que la connection coupe.
+            ws.onclose = function() {
+                console.log("Websocket connection closed, retrying... \n");
+                setTimeout(connect, 1000); // Tente de se reconnecter après un délais d'une seconde.
+            }
+
+            // Si il y a une erreur, affiche le message d'erreur dans le terminal.
+            ws.onerror = function(error) {
+                console.error(`WebSocket error: ${error}\n`);
+            };
+        }
+
+        // Ce qui envoi le message de l'utilisateur au serveur.
+        function sendMessage() {
+            let input = document.getElementById("messageInput"); // Récupère le message de l'utilisateur dans le champs html "messageInput"
+            let message = input.value;
+            ws.send(message); // Envoie les données vers le serveur GO.
+            input.value = ""; // Vide la variable "input" pour le prochain message.
+        }
+
+        connect();
+
+    </script>
+</body>
+</html>
