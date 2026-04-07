@@ -4,6 +4,7 @@ echo "Installation des extensions VSCode."
 # Extensions de conforts.
 code --install-extension esbenp.prettier-vscode          # Prettier
 code --install-extension ms-vscode-remote.remote-containers # Dev Containers
+
 # Extensions Git.
 code --install-extension eamodio.gitlens                 # GitLens
 code --install-extension mhutchie.git-graph              # Git Graph
@@ -23,3 +24,5 @@ code --install-extension yy0931.vscode-sqlite3-editor    # SQLite 3
 # Extension GO.
 code --install-extension golang.go                       # GO
 
+# Extension Postgresql.
+code --install-extension cweijan.vscode-postgresql-client2 # Database PostgreSQL
