@@ -74,7 +74,9 @@
 |--------|----------|
 | Lister les réseaux | `docker network ls` |
 | Créer un réseau | `docker network create <nom>` |
-| Supprimer réseaux non utilisés | `docker network prune` |
-| Forcer la suppression des réseaux | `docker network prune -f` |
+| Supprimer un réseau Docker | `docker network rm <nom>` |
+| Supprimer réseaux Docker non utilisés (retour à la configuration de base de Docker) | `docker network prune` |
+| Forcer la suppression des réseaux utilisés ou non (retour à la configuration de base de Docker) | `docker network prune -f` |
+| 
 
 ---
