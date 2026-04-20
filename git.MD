@@ -60,7 +60,7 @@
 | Afficher l’historique des commits | `git log` |
 | Voir les différences entre index et fichiers modifiés | `git diff` |
 | Voir les détails d’un commit | `git show <commit>` |
-
+| Voir l'historique de toutes les branches et commits | `git log --oneline --graph --decorate --all` |
 ---
 
 ## Suppression & nettoyage
