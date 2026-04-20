@@ -61,6 +61,7 @@
 | Voir les différences entre index et fichiers modifiés | `git diff` |
 | Voir les détails d’un commit | `git show <commit>` |
 | Voir l'historique de toutes les branches et commits | `git log --oneline --graph --decorate --all` |
+| Voir toutes les modifications et commits affectant des lignes de codes dans un fichier spécifiques | `git log -L <Numéro de la ligne de début, exemple : 2> ,<Numéro de la ligne de fin, exemple : 17>:<Nom du fichier à vigiler.son extension>` |
 ---
 
 ## Suppression & nettoyage
