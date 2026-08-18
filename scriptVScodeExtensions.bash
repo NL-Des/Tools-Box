@@ -26,3 +26,7 @@ code --install-extension golang.go                       # GO
 
 # Extension Postgresql.
 code --install-extension cweijan.vscode-postgresql-client2 # Database PostgreSQL
+
+# Extension RUST.
+code --install-extension rust-lang.rust-analyzer      # Rust Analyzer
+code --install-extension usernamehw.errorlens          # Error Lens
